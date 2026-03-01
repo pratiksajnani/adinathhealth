@@ -112,8 +112,8 @@ const AccessControl = {
     async enforce() {
         const path = window.location.pathname;
         let normalizedPath = path;
-        if (path.includes('/adinath-hospital')) {
-            normalizedPath = path.replace('/adinath-hospital', '');
+        if (path.includes('/adinathhealth')) {
+            normalizedPath = path.replace('/adinathhealth', '');
         }
         if (!normalizedPath.startsWith('/')) {
             normalizedPath = `/${normalizedPath}`;
@@ -220,7 +220,7 @@ const AccessControl = {
             '/store.html',
             '/404.html',
         ];
-        const currentPath = window.location.pathname.replace('/adinath-hospital', '');
+        const currentPath = window.location.pathname.replace('/adinathhealth', '');
 
         if (
             !publicPaths.includes(currentPath) &&

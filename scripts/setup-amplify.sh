@@ -42,9 +42,9 @@ echo -e "${GREEN}✓ Logged in to AWS Account: $ACCOUNT_ID${NC}"
 echo ""
 
 # App configuration
-APP_NAME="adinath-hospital"
+APP_NAME="adinathhealth"
 REGION="ap-south-1"  # Mumbai region - closest to Ahmedabad
-REPO_URL="https://github.com/pratiksajnani/adinath-hospital"
+REPO_URL="https://github.com/pratiksajnani/adinathhealth"
 
 echo -e "${BLUE}Creating Amplify app: $APP_NAME${NC}"
 echo "Region: $REGION"

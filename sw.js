@@ -1,6 +1,6 @@
 // Adinath Hospital Service Worker
 // Version 2.0 - Force cache bust
-const CACHE_NAME = 'adinath-hospital-v2.0';
+const CACHE_NAME = 'adinathhealth-v2.0';
 
 // Minimal caching for production - only static assets
 const urlsToCache = [

@@ -9,17 +9,17 @@
 3. Sign in with GitHub
 4. Click **New Project**
 5. Fill in:
-   - **Name:** `adinath-hospital`
-   - **Database Password:** (save this somewhere safe!)
-   - **Region:** `South Asia (Mumbai)` - closest to Ahmedabad
+    - **Name:** `adinathhealth`
+    - **Database Password:** (save this somewhere safe!)
+    - **Region:** `South Asia (Mumbai)` - closest to Ahmedabad
 6. Click **Create new project** (takes ~2 minutes)
 
 ### Step 2: Get Your API Keys
 
 1. In your project, go to **Settings** → **API**
 2. Copy these two values:
-   - **Project URL** (looks like `https://xxxxx.supabase.co`)
-   - **anon public key** (long string starting with `eyJ...`)
+    - **Project URL** (looks like `https://xxxxx.supabase.co`)
+    - **anon public key** (long string starting with `eyJ...`)
 
 ### Step 3: Update the Website
 
@@ -27,8 +27,8 @@ Open `js/supabase-client.js` and update:
 
 ```javascript
 const SUPABASE_CONFIG = {
-    url: 'https://YOUR_PROJECT_ID.supabase.co',  // Paste Project URL
-    anonKey: 'eyJ...'  // Paste anon public key
+    url: 'https://YOUR_PROJECT_ID.supabase.co', // Paste Project URL
+    anonKey: 'eyJ...', // Paste anon public key
 };
 ```
 
@@ -180,6 +180,7 @@ For phone/SMS login (patients), you need Twilio:
 ## Demo Mode
 
 Until Supabase is configured, the website runs in **demo mode**:
+
 - Login works with any password
 - Data saves to browser localStorage only
 - Not shared across devices/browsers
@@ -191,4 +192,3 @@ Once you add the Supabase config, it automatically switches to real mode.
 ## Need Help?
 
 The code is designed to gracefully fall back to demo mode if Supabase isn't configured. You can set it up whenever ready!
-

@@ -10,39 +10,44 @@
 **Adinath Hospital** is a comprehensive hospital management system for a mid-size hospital in Ahmedabad, India, owned by Dr. Ashok Sajnani (Orthopedic) and Dr. Sunita Sajnani (OB-GYN).
 
 ### Tech Stack
+
 - **Frontend:** Pure HTML5, CSS3, Vanilla JavaScript
 - **Data:** localStorage-based HMS (Hospital Management System) - see `js/hms.js`
 - **Hosting:** AWS Amplify (auto-deploys from GitHub)
 - **Live URL:** https://adinathhealth.com/
 
 ### Key Files
-| File | Purpose |
-|------|---------|
-| `js/hms.js` | Hospital Management System - localStorage "database" |
-| `js/i18n.js` | Multilingual support (EN/HI/GU) |
-| `js/config.js` | Base URL configuration |
-| `js/main.js` | UI interactions, service worker |
-| `tests/test-runner.js` | Automated test suite |
-| `tests/TEST_STRATEGY.md` | Manual test cases |
+
+| File                     | Purpose                                              |
+| ------------------------ | ---------------------------------------------------- |
+| `js/hms.js`              | Hospital Management System - localStorage "database" |
+| `js/i18n.js`             | Multilingual support (EN/HI/GU)                      |
+| `js/config.js`           | Base URL configuration                               |
+| `js/main.js`             | UI interactions, service worker                      |
+| `tests/test-runner.js`   | Automated test suite                                 |
+| `tests/TEST_STRATEGY.md` | Manual test cases                                    |
 
 ---
 
 ## 👥 REAL PEOPLE IN SYSTEM
 
 ### ✅ CONFIRMED ACCOUNTS
-| Role | Name | Email | Phone |
-|------|------|-------|-------|
-| **Site Admin** | Pratik Sajnani | pratik.sajnani@gmail.com | - |
-| **Doctor** | Dr. Ashok Sajnani | drsajnani@gmail.com | 9925450425 |
-| **Doctor** | Dr. Sunita Sajnani | sunita.sajnani9@gmail.com | 9925450425 |
-| **Receptionist** | Poonam (male) | reception@adinathhealth.com | ❓ Need |
+
+| Role             | Name               | Email                       | Phone      |
+| ---------------- | ------------------ | --------------------------- | ---------- |
+| **Site Admin**   | Pratik Sajnani     | pratik.sajnani@gmail.com    | -          |
+| **Doctor**       | Dr. Ashok Sajnani  | drsajnani@gmail.com         | 9925450425 |
+| **Doctor**       | Dr. Sunita Sajnani | sunita.sajnani9@gmail.com   | 9925450425 |
+| **Receptionist** | Poonam (male)      | reception@adinathhealth.com | ❓ Need    |
 
 ### ❌ FAKE DATA REMOVED
+
 - ~~Priya Patel (fake receptionist)~~
 - ~~Kavita Sharma (fake nurse)~~
 - ~~Rahul Mehta (fake pharmacist)~~
 
 ### ⏳ NEED REAL DATA FROM USER
+
 - [ ] Poonam's phone number
 - [ ] Any other staff members?
 - [ ] Nurse details (if any)
@@ -53,6 +58,7 @@
 ## 📝 TODO LIST
 
 ### 🔴 HIGH PRIORITY - Testing & Validation
+
 - [ ] **P1:** Run full test suite on live site
 - [ ] **P2:** Test Patient Flow: Book appointment → view portal → check status
 - [ ] **P3:** Test Staff Flow: Login → send patient links → manage queue
@@ -62,6 +68,7 @@
 - [ ] **P7:** Test CRUD operations (create/delete accounts, data persistence)
 
 ### 🟡 MEDIUM PRIORITY - Fixes Found
+
 - [x] ~~Fix HMS data seeding - users weren't being saved to localStorage~~
 - [x] ~~Fix service worker path~~
 - [x] ~~Fix mobile hero section spacing~~
@@ -70,6 +77,7 @@
 - [ ] Test SMS templates in all 3 languages
 
 ### 🟢 LOW PRIORITY - Future Enhancements
+
 - [ ] Add real photos for staff (when provided)
 - [ ] Add more inventory items to HMS
 - [ ] Integrate real SMS service (MSG91 / Twilio)
@@ -99,7 +107,7 @@ const patient = HMS.patients.add({
     name: 'Test Kumar',
     phone: '9999999999',
     age: 40,
-    gender: 'male'
+    gender: 'male',
 });
 console.log('Created patient:', patient);
 
@@ -110,15 +118,18 @@ const appt = HMS.appointments.add({
     doctor: 'ashok',
     date: new Date().toISOString().split('T')[0],
     time: '11:30 AM',
-    reason: 'Knee pain'
+    reason: 'Knee pain',
 });
 console.log('Booked appointment:', appt);
 
 // 6. Generate patient signup link
-const link = HMS.patientLinks.generate({
-    phone: '9876543210',
-    name: 'New Patient'
-}, 'U005');
+const link = HMS.patientLinks.generate(
+    {
+        phone: '9876543210',
+        name: 'New Patient',
+    },
+    'U005'
+);
 console.log('Patient link:', link);
 ```
 
@@ -126,19 +137,19 @@ console.log('Patient link:', link);
 
 ## 🔗 KEY PAGES TO TEST
 
-| Page | URL | Purpose |
-|------|-----|---------|
-| Homepage | `/` | Public landing page |
-| Book Appointment | `/book.html` | Patient booking |
-| Login | `/login.html` | Staff/Doctor login |
-| Portal Hub | `/portal/index.html` | Navigation to all portals |
-| Patient Portal | `/portal/patient/index.html` | Patient dashboard |
-| Doctor Dashboard | `/portal/doctor/simple.html` | Easy doctor interface |
-| Staff Portal | `/portal/staff/index.html` | Staff queue management |
-| Admin Portal | `/portal/admin/index.html` | System administration |
-| Printable Forms | `/forms/index.html` | All printable forms |
-| Medical Store | `/store.html` | Public pharmacy info |
-| Store Dashboard | `/store/index.html` | Staff inventory/sales |
+| Page             | URL                          | Purpose                   |
+| ---------------- | ---------------------------- | ------------------------- |
+| Homepage         | `/`                          | Public landing page       |
+| Book Appointment | `/book.html`                 | Patient booking           |
+| Login            | `/login.html`                | Staff/Doctor login        |
+| Portal Hub       | `/portal/index.html`         | Navigation to all portals |
+| Patient Portal   | `/portal/patient/index.html` | Patient dashboard         |
+| Doctor Dashboard | `/portal/doctor/simple.html` | Easy doctor interface     |
+| Staff Portal     | `/portal/staff/index.html`   | Staff queue management    |
+| Admin Portal     | `/portal/admin/index.html`   | System administration     |
+| Printable Forms  | `/forms/index.html`          | All printable forms       |
+| Medical Store    | `/store.html`                | Public pharmacy info      |
+| Store Dashboard  | `/store/index.html`          | Staff inventory/sales     |
 
 ---
 
@@ -147,12 +158,12 @@ console.log('Patient link:', link);
 > ⚠️ **Security:** Real credentials are not stored in this repository.
 > See SECURITY.md for credential management policies.
 
-| Role | Email | Auth Method |
-|------|-------|-------------|
-| Admin | pratik.sajnani@gmail.com | Password / Google |
-| Doctor | drsajnani@gmail.com | Google Sign-In |
-| Doctor | sunita.sajnani9@gmail.com | Google Sign-In |
-| Staff | reception@adinathhealth.com | Password |
+| Role   | Email                       | Auth Method       |
+| ------ | --------------------------- | ----------------- |
+| Admin  | pratik.sajnani@gmail.com    | Password / Google |
+| Doctor | drsajnani@gmail.com         | Google Sign-In    |
+| Doctor | sunita.sajnani9@gmail.com   | Google Sign-In    |
+| Staff  | reception@adinathhealth.com | Password          |
 
 **For testing:** Use the onboarding flow or contact the admin for test credentials.
 
@@ -161,7 +172,7 @@ console.log('Patient link:', link);
 ## 📁 PROJECT STRUCTURE
 
 ```
-adinath-hospital/
+adinathhealth/
 ├── index.html          # Homepage
 ├── book.html           # Appointment booking
 ├── login.html          # Staff/Doctor login
@@ -228,4 +239,3 @@ adinath-hospital/
 4. Fix any failures
 5. Test each user role flow manually
 6. Push fixes and verify deployment
-

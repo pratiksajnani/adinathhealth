@@ -5,7 +5,7 @@
 
 const CONFIG = {
     // Base URL for GitHub Pages path prefix (empty for production/local)
-    BASE_URL: window.location.hostname.includes('github.io') ? '/adinath-hospital' : '',
+    BASE_URL: window.location.hostname.includes('github.io') ? '/adinathhealth' : '',
 
     // Supabase connection
     SUPABASE_URL: 'https://lhwqwloibxiiqtgaoxqp.supabase.co',

@@ -1,5 +1,5 @@
 {
-  "name": "adinath-hospital",
+  "name": "adinathhealth",
   "version": "1.0.0",
   "description": "Adinath Hospital - Healthcare Website",
   "scripts": {
@@ -86,7 +86,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pratiksajnani/adinath-hospital.git"
+    "url": "https://github.com/pratiksajnani/adinathhealth.git"
   },
   "author": "Pratik Sajnani",
   "license": "MIT"

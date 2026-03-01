@@ -3,6 +3,7 @@
 ## Quick Deploy from Cursor
 
 Once set up, deploying is as simple as:
+
 ```bash
 git add -A && git commit -m "Update" && git push
 ```
@@ -14,6 +15,7 @@ AWS Amplify will automatically build and deploy!
 ## First-Time Setup (10 minutes)
 
 ### Prerequisites
+
 - AWS Account (free tier: https://aws.amazon.com/free)
 - GitHub account with repo access
 - Mac with Homebrew
@@ -40,6 +42,7 @@ aws configure
 ```
 
 Enter:
+
 - AWS Access Key ID: `[paste your key]`
 - AWS Secret Access Key: `[paste your secret]`
 - Default region: `ap-south-1`
@@ -51,7 +54,7 @@ Enter:
 2. Click **"New app"** → **"Host web app"**
 3. Select **GitHub**
 4. Authorize AWS Amplify to access your GitHub
-5. Select repository: `adinath-hospital`
+5. Select repository: `adinathhealth`
 6. Select branch: `main`
 7. Build settings: Leave default (auto-detected from amplify.yml)
 8. Click **"Save and deploy"**
@@ -59,6 +62,7 @@ Enter:
 ### Step 5: Wait for Deployment (~2-3 minutes)
 
 You'll get a URL like:
+
 ```
 https://main.d1234abcd.amplifyapp.com
 ```
@@ -68,7 +72,7 @@ https://main.d1234abcd.amplifyapp.com
 ## Make Repo Private (Recommended for Healthcare)
 
 ```bash
-gh repo edit pratiksajnani/adinath-hospital --visibility private
+gh repo edit pratiksajnani/adinathhealth --visibility private
 ```
 
 ---
@@ -85,7 +89,7 @@ gh repo edit pratiksajnani/adinath-hospital --visibility private
 
 ```bash
 # Make changes in Cursor, then:
-cd /Users/psaj/src/adinath-hospital
+cd /Users/psaj/src/adinathhealth
 git add -A
 git commit -m "Your change description"
 git push
@@ -98,6 +102,7 @@ git push
 ## Environment Variables (For Production)
 
 In Amplify Console → Environment Variables, add:
+
 - `SMS_API_KEY` - For MSG91/Twilio SMS
 - `ANALYTICS_ID` - For Google Analytics
 
@@ -116,4 +121,3 @@ In Amplify Console → Environment Variables, add:
 
 - AWS Amplify Docs: https://docs.amplify.aws/
 - Issues: Contact pratik.sajnani@gmail.com
-

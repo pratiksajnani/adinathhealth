@@ -127,7 +127,7 @@ git push origin main # Amplify auto-deploys
 ### File Organization
 
 ```
-adinath-hospital/
+adinathhealth/
 ├── index.html              # Homepage
 ├── book.html               # Appointment booking
 ├── login.html              # Staff/Doctor login
@@ -270,6 +270,35 @@ If pre-commit checks fail, fix issues and commit again (never use `--no-verify`)
 - Z-index must use defined scale variables (`--z-modal`, `--z-dropdown`, etc.)
 - Mobile-first responsive design
 
+## Style Guide
+
+### CSS Conventions
+
+Design system centered on CSS custom properties in `css/design-system.css`. Mobile-first responsive design with BEM-like naming. All colors, spacing, and z-index values use CSS variables — no hardcoded values.
+
+- **Variables source of truth**: `css/design-system.css`
+- **Colors**: `--primary`, `--success`, `--error` (never hardcoded hex)
+- **Spacing utilities**: `.p-4`, `.mb-6`, `.mt-8`
+- **Z-index scale**: `--z-modal`, `--z-dropdown` (variables only)
+- **Naming**: kebab-case classes (`.patient-card`), BEM modifiers (`.card__header--active`)
+- **No inline styles** — use utility classes
+- **No page-specific `<style>` blocks** — all styles in CSS files
+
+### JavaScript Conventions
+
+- `const`/`let` only (never `var`)
+- camelCase functions: `getPatientById()`
+- UPPER_SNAKE_CASE constants: `API_BASE_URL`
+- PascalCase classes: `PatientManager`
+- Template literals, strict equality (`===`)
+
+### i18n Requirements
+
+- All user-facing text must support EN/HI/GU
+- HTML: `data-i18n="key"`, `data-i18n-placeholder="key"`
+- JavaScript: `I18N.t('key')`
+- Test language switching on modified pages
+
 ## Key Files to Know
 
 | File                     | Purpose                  | Size                      |
@@ -345,7 +374,7 @@ Check GitHub Actions status. Usually due to:
 
 - **Live Site:** https://adinathhealth.com/
 - **Staging:** https://main.d2a0i6erg1hmca.amplifyapp.com/
-- **GitHub:** https://github.com/pratiksajnani/adinath-hospital
+- **GitHub:** https://github.com/pratiksajnani/adinathhealth
 - **AWS Amplify Console:** https://console.aws.amazon.com/amplify/
 - **Test Report:** After running tests, view with `npm run test:report`
 - **Documentation:** See `docs/` folder for guides and demo scripts
@@ -355,4 +384,4 @@ Check GitHub Actions status. Usually due to:
 For questions about the codebase or deployment:
 
 - **Site Admin:** Pratik Sajnani (pratik.sajnani@gmail.com)
-- **Repository:** pratiksajnani/adinath-hospital
+- **Repository:** pratiksajnani/adinathhealth
