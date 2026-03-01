@@ -3,6 +3,7 @@
 > Inherits from: ~/src/CLAUDE.md (workspace principles)
 > Narrows: #1 Real data → real hospital, real doctors
 > Adds: Patient content accuracy, accessibility, vanilla simplicity
+> See shared-knowledge/CONVENTIONS.md for workspace standards
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
